@@ -1,4 +1,4 @@
-package methods;
+package methods.svenn;
 
 import formulareader.FormulaReader;
 
@@ -26,7 +26,7 @@ public class Svenn {
     }
 
     public Svenn(FormulaReader function) {
-        System.out.println("-------------------Start Svenn-------------------");
+        System.out.println("-----------------------Start Svenn----------------------");
         Scanner sc = new Scanner(System.in);
         this.function = function;
         x = new double[80];
@@ -113,6 +113,6 @@ public class Svenn {
 
     public void printResult() {
         System.out.println("Отрезок на " + k + "итерации:  [" + a + ";" + b + "]" + "\n" +
-                            "---------------------End Svenn--------------------");
+                            "-------------------------End Svenn-----------------------");
     }
 }
