@@ -6,15 +6,14 @@ import methods.dichotomyMethod.DichotomyMethod;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Scanner;
 
 public class StartClass {
-    StartMethodsInterface method;
+    MethodsInterface method;
     FormulaReader formula;
     BufferedReader reader;
     double result;
 
-    public StartClass(StartMethodsInterface method) {
+    public StartClass(MethodsInterface method) {
         this.method = method;
         String formulaStr = "";
         reader = new BufferedReader(new InputStreamReader(System.in));
@@ -25,7 +24,8 @@ public class StartClass {
         }
         this.formula = new FormulaReader(formulaStr);
 
-        method.startMethod(this.formula);
+        method.inputOptions(this.formula);
+        method.startMethod();
         result = method.returnResult();
     }
 

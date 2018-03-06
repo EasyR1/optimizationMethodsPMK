@@ -1,17 +1,15 @@
 package methods.dichotomyMethod;
 
 import formulareader.FormulaReader;
-import methods.StartMethodsInterface;
+import methods.MethodsInterface;
 import methods.svenn.Svenn;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class DichotomyMethod implements StartMethodsInterface{
+public class DichotomyMethod implements MethodsInterface {
     private Scanner sc;
     private double eps;
-    private double t;
-    private double x0;
     private double a;
     private double b;
     private double y;
@@ -31,11 +29,9 @@ public class DichotomyMethod implements StartMethodsInterface{
     }
 
     @Override
-    public void startMethod(FormulaReader function) {
-        setFunction(function);
-        inputEps();             //Вводим eps
-        inputSegment();         //Вводим отрезок
-
+    public void start() {
+        if (function == null)
+            return;
 
         System.out.println("---------------------Метод Дихотомии---------------------");
         inputStep();
@@ -49,7 +45,14 @@ public class DichotomyMethod implements StartMethodsInterface{
     @Override
     public void startMethod() {
         if (function != null)
-            startMethod(function);
+            start();
+    }
+
+    @Override
+    public void inputOptions(FormulaReader function) {
+        this.function = function;
+        inputEps();     //Вводим eps
+        inputSegment(); //Вводим отрезок
     }
 
     @Override
@@ -71,12 +74,52 @@ public class DichotomyMethod implements StartMethodsInterface{
 
     }
 
-
-
     private void inputSegment(){
+        String answer;
+        while (true) {
+            System.out.println("Найти интервал методом Свенна y/n?");
+            answer = sc.next();
+            answer.toLowerCase();
+            if (answer.equals("y"))  {
+                useSvenn();
+                break;
+            }
+            else
+                if(answer.equals("n")) {
+                    useManualInput();
+                    break;
+                }
+                else {
+                    System.out.println("Некорректный ввод. Повторите попытку");
+                }
+        }
+
+    }
+
+    private void useSvenn() {
         Svenn svenn = new Svenn(function);
         a = svenn.getA();
         b = svenn.getB();
+    }
+
+    private void useManualInput() {
+        while (true) {
+            System.out.println("Введите интервал: ");
+
+            try {
+                System.out.print("a = ");
+                a = sc.nextDouble();
+                System.out.print("b = ");
+                b = sc.nextDouble();
+                break;
+
+            } catch (InputMismatchException e) {
+                System.out.println("ERROR: Не корректный отрезок." + "\n" +
+                        "     ! Не целые числа записываются через \",\" Например: 1,5");
+            }
+        }
+
+
     }
 
     private void inputStep(){
@@ -107,62 +150,7 @@ public class DichotomyMethod implements StartMethodsInterface{
         } while (Math.abs(b - a) > l);
 
         x = (a + b) / 2;
-
-
         return x;
     }
 
-    private void setFunction(FormulaReader function) {
-        this.function = function;
-    }
-
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Formula: ");
-        FormulaReader formulaReader = new FormulaReader(sc.next());
-        DichotomyMethod dichotomyMethod = new DichotomyMethod(formulaReader);
-
-        /*
-        Scanner sc = new Scanner(System.in);
-
-        System.out.print("Function: ");
-        FormulaReader function = new FormulaReader(sc.next());
-
-        double eps = 0.1;
-        System.out.print("t: ");
-        double t = sc.nextDouble();
-        System.out.print("x0: ");
-        double x0 = sc.nextDouble();
-        Svenn svenn = new Svenn(function, t, x0);
-        double a = svenn.getA();
-        double b = svenn.getB();
-        double y;
-        double z;
-        double l = 0.2;
-        int k = -1;
-        double x;
-
-        svenn.printResult();
-
-        do {
-            k++;
-            y = (a+b-eps)/2;
-            z = (a+b+eps)/2;
-
-            if (function.calculateFormula(y) <= function.calculateFormula(z)) {
-                //a не меняется
-                b = z;
-            }
-            else {
-                a = y;
-                //b не меняется
-            }
-        } while (Math.abs(b-a) > l);
-
-        x = (a+b)/2;
-
-        System.out.println("x* = " + x +
-                "\nf(x*) = " + function.calculateFormula(x));
-       */
-    }
 }

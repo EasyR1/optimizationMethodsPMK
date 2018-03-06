@@ -2,8 +2,9 @@ package methods;
 
 import formulareader.FormulaReader;
 
-public interface StartMethodsInterface {
-    void startMethod(FormulaReader function);
+public interface MethodsInterface {
+    void start();
     void startMethod();
+    void inputOptions(FormulaReader formulaReader);
     double returnResult();
 }
