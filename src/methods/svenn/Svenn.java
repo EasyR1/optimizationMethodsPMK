@@ -112,7 +112,7 @@ public class Svenn {
     }
 
     public void printResult() {
-        System.out.println("Отрезок на " + k + "итерации:  [" + a + ";" + b + "]" + "\n" +
+        System.out.println("Отрезок на " + k + " итерации:  [" + a + ";" + b + "]" + "\n" +
                             "-------------------------End Svenn-----------------------");
     }
 }

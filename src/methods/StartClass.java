@@ -2,6 +2,7 @@ package methods;
 
 import formulareader.FormulaReader;
 import methods.dichotomyMethod.DichotomyMethod;
+import methods.goldenRatioMethod.GoldenRatio;
 import methods.parabolMethod.ParabolMethod;
 
 import java.io.BufferedReader;
@@ -37,6 +38,6 @@ public class StartClass {
     }
 
     public static void main(String[] args) {
-        new StartClass(new ParabolMethod());
+        new StartClass(new GoldenRatio());
     }
 }
