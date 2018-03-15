@@ -37,7 +37,7 @@ public class GoldenRatio implements MethodsInterface {
         System.out.println("----------------Метод Золотого Сечения-------------------");
         inputSegment();
         calcMethod();
-        System.out.println("x* =    " + result);
+        System.out.println("x*    = " + result);
         System.out.println("f(x*) = " + calcF(result));
         System.out.println("----------------------------end--------------------------");
 
@@ -101,7 +101,6 @@ public class GoldenRatio implements MethodsInterface {
                 k++;
                 doNextStep();
             }
-            System.out.println(k + ": " + delta);
         } while (delta > l);
         result = (ak1 + bk1)/2;
 
