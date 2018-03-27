@@ -34,7 +34,7 @@ public class GoldenRatio implements MethodsInterface {
 
     @Override
     public void start() {
-        System.out.println("----------------Метод Золотого Сечения-------------------");
+        System.out.println();
         inputSegment();
         calcMethod();
         System.out.println("x*    = " + result);
@@ -73,6 +73,7 @@ public class GoldenRatio implements MethodsInterface {
     public double returnResult() {
         return result;
     }
+
     private void calcMethod() {
         //2
         k = 0;
@@ -108,7 +109,7 @@ public class GoldenRatio implements MethodsInterface {
     }
 
     private void doNextStep() {
-        //при переходе к следующему шагу увеличиваем k на 1, т.е записываем в старое k новое k
+        //при переходе к следующему шагу увеличиваем k на 1, т.е записываем в старое k новое k1
         ak = ak1;
         bk = bk1;
         yk = yk1;

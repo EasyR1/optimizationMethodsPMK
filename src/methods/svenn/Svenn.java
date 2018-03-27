@@ -59,29 +59,33 @@ public class Svenn {
         return k;
     }
 
+    private double calcF(double x) {
+        return function.calculateFormula(x);
+    }
+
     private void doMethod() {
         //3
-        if (function.calculateFormula(x[0]-t) >= function.calculateFormula(x[0])
-                && function.calculateFormula(x[0]+t) >= function.calculateFormula(x[0])) {
+        if (calcF(x[0]-t) >= calcF(x[0])
+                && calcF(x[0]+t) >= calcF(x[0])) {
             a = x[0] - t;
             b = x[0] + t;
             return;
         } else 
-            if (function.calculateFormula(x[0]-t) <= function.calculateFormula(x[0])
-                    && function.calculateFormula(x[0]+t) <= function.calculateFormula(x[0])) {
+            if (calcF(x[0]-t) <= calcF(x[0])
+                    && calcF(x[0]+t) <= calcF(x[0])) {
                 System.out.println("Не унимодальная функция, возьмите другой x0");
             }
         //4    
-        if (function.calculateFormula(x[0]-t) >= function.calculateFormula(x[0])
-                && function.calculateFormula(x[0]+t) <= function.calculateFormula(x[0])){
+        if (calcF(x[0]-t) >= calcF(x[0])
+                && calcF(x[0]+t) <= calcF(x[0])){
             delta = t;
             a = x[0];
             x[1] = x[0] + t;
             k = 1;
         }
         
-        if (function.calculateFormula(x0-t) <= function.calculateFormula(x0)
-                && function.calculateFormula(x0+t) >= function.calculateFormula(x0)) {
+        if (calcF(x0-t) <= calcF(x0)
+                && calcF(x0+t) >= calcF(x0)) {
             delta = -t;
             b = x[0];
             x[1] = x[0] - t;
@@ -92,18 +96,18 @@ public class Svenn {
         while (true) {
             x[k+1] = x[k] + Math.pow(2.0, k) * delta;
 
-            if (function.calculateFormula(x[k+1]) < function.calculateFormula(x[k]) && delta == t)
+            if (calcF(x[k+1]) < calcF(x[k]) && delta == t)
                 a = x[k];
 
-            if (function.calculateFormula(x[k+1]) < function.calculateFormula(x[k]) && delta == -t)
+            if (calcF(x[k+1]) < calcF(x[k]) && delta == -t)
                 b = x[k];
 
-            if (function.calculateFormula(x[k+1]) >= function.calculateFormula(x[k]) && delta == t) {
+            if (calcF(x[k+1]) >= calcF(x[k]) && delta == t) {
                 b = x[k+1];
                 break;
             }
 
-            if (function.calculateFormula(x[k+1]) >= function.calculateFormula(x[k]) && delta == -t) {
+            if (calcF(x[k+1]) >= calcF(x[k]) && delta == -t) {
                 a = x[k+1];
                 break;
             }
