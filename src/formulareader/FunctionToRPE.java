@@ -18,7 +18,7 @@ public class FunctionToRPE {
     public FunctionToRPE(String inputString) {
         this(
                 inputString, "0123456789.",
-                "^*/+-", "xX", "sin|cos|tg|ctg|exp|sqrt"
+                "^*/+-", "xXyY", "sin|cos|tg|ctg|exp|sqrt|ln"
         );
     }
 
@@ -45,6 +45,7 @@ public class FunctionToRPE {
         priority.put("ctg", 5);
         priority.put("sqrt", 5);
         priority.put("exp", 5);
+        priority.put("ln", 5);
     }
 
     public String convertationToRPE() {

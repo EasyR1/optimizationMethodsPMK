@@ -16,13 +16,14 @@ public class FormulaReader {
         stack = new Stack<>();
         numbers = "0123456789.";
         operators = "^*/+-";
-        variables = "Xx";
-        functions = "sin|cos|tg|ctg|exp|sqrt";
+        variables = "XxYy";
+        functions = "sin|cos|tg|ctg|exp|sqrt|ln";
         FunctionToRPE convertToRPE = new FunctionToRPE(inputFunction, numbers, operators, variables, functions);
         formulaRPE = convertToRPE.convertationToRPE();
 
     }
 
+    //Переделать метод на работу с n переменными, установить проверку!
     public double calculateFormula(double x) {
         double a;
         double b;
@@ -112,6 +113,9 @@ public class FormulaReader {
                 a = Double.parseDouble(stack.pop());
                 stack.push("" + Math.exp(a));
                 break;
+            case "ln":
+                a = Double.parseDouble(stack.pop());
+                stack.push("" + Math.log1p(a));
         }
 
         return iter-1;
