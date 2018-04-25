@@ -1,5 +1,6 @@
 package methods.dichotomyMethod;
 
+import formulareader.FormulaInterface;
 import formulareader.FormulaReader;
 import methods.MethodsInterface;
 import methods.svenn.Svenn;
@@ -49,8 +50,8 @@ public class DichotomyMethod implements MethodsInterface {
     }
 
     @Override
-    public void inputOptions(FormulaReader function) {
-        this.function = function;
+    public void inputOptions(FormulaInterface function) {
+        this.function = (FormulaReader) function;
         inputEps();     //Вводим eps
         inputSegment(); //Вводим отрезок
     }

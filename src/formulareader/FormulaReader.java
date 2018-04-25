@@ -3,9 +3,10 @@ package formulareader;
 import java.util.Scanner;
 import java.util.Stack;
 
-public class FormulaReader {
+public class FormulaReader implements FormulaInterface{
     private String formulaRPE;
     private Stack<String> stack;
+    private String inputFunction;
     private String numbers;
     private String operators;
     private String variables;
@@ -16,8 +17,9 @@ public class FormulaReader {
         stack = new Stack<>();
         numbers = "0123456789.";
         operators = "^*/+-";
-        variables = "Xx";
+        variables = "XxYy";
         functions = "sin|cos|tg|ctg|exp|sqrt";
+        this.inputFunction = inputFunction;
         FunctionToRPE convertToRPE = new FunctionToRPE(inputFunction, numbers, operators, variables, functions);
         formulaRPE = convertToRPE.convertationToRPE();
 
@@ -121,11 +123,27 @@ public class FormulaReader {
         return formulaRPE;
     }
 
+    public void setVariables(String variables) {
+        this.variables = variables;
+    }
+
+    public void setFormulaRPE(String formulaRPE) {
+        this.formulaRPE = formulaRPE;
+    }
+
+    public String getVariables() {
+        return variables;
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Function: ");
         FormulaReader formulaReader = new FormulaReader(sc.next());
         System.out.print(formulaReader.getFormulaRPE() + "\nx = ");
         System.out.println(formulaReader.calculateFormula(sc.nextDouble()));
+    }
+
+    public String getInputFunction() {
+        return inputFunction;
     }
 }

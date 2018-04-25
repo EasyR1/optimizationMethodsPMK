@@ -1,5 +1,6 @@
-package methods.gradientSpusk;
+package methods.firstPor.gradientSpusk.gradientSpusk;
 
+import formulareader.FormulaInterface;
 import formulareader.FormulaReader;
 import methods.MethodsInterface;
 
@@ -58,8 +59,8 @@ public class GradientSpusk implements MethodsInterface {
     }
 
     @Override
-    public void inputOptions(FormulaReader formulaReader) {
-        function = formulaReader;
+    public void inputOptions(FormulaInterface formulaReader) {
+        function = (FormulaReader) formulaReader;
         String input;
         String[] strings;
         while (true) {

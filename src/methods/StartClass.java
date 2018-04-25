@@ -1,9 +1,9 @@
 package methods;
 
+import formulareader.FormulaInterface;
 import formulareader.FormulaReader;
-import methods.dichotomyMethod.DichotomyMethod;
-import methods.goldenRatioMethod.GoldenRatio;
-import methods.parabolMethod.ParabolMethod;
+import formulareader.FormulaReaderWithTwoArguments;
+import methods.firstPor.gradientSpusk.conjugatedDirections.ConjugatedDirections;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -11,7 +11,7 @@ import java.io.InputStreamReader;
 
 public class StartClass {
     private MethodsInterface method;
-    private FormulaReader formula;
+    private FormulaInterface formula;
     private BufferedReader reader;
     private double result;
 
@@ -26,7 +26,12 @@ public class StartClass {
             e.printStackTrace();
             return;
         }
-        this.formula = new FormulaReader(formulaStr);
+        if (formulaStr.contains("x") && formulaStr.contains("y")) {
+            this.formula = new FormulaReaderWithTwoArguments(formulaStr);
+        }
+        else {
+            this.formula = new FormulaReader(formulaStr);
+        }
 
         method.inputOptions(this.formula);
         method.startMethod();
@@ -38,6 +43,6 @@ public class StartClass {
     }
 
     public static void main(String[] args) {
-        new StartClass(new GoldenRatio());
+        new StartClass(new ConjugatedDirections());
     }
 }

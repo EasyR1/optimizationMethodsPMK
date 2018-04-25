@@ -1,5 +1,6 @@
 package methods.goldenRatioMethod;
 
+import formulareader.FormulaInterface;
 import formulareader.FormulaReader;
 import methods.MethodsInterface;
 import methods.svenn.Svenn;
@@ -51,8 +52,8 @@ public class GoldenRatio implements MethodsInterface {
     }
 
     @Override
-    public void inputOptions(FormulaReader formulaReader) {
-        formula = formulaReader;
+    public void inputOptions(FormulaInterface formulaReader) {
+        formula = (FormulaReader) formulaReader;
         System.out.println("Введите точность l > 0");
         try {
             do {
@@ -78,7 +79,7 @@ public class GoldenRatio implements MethodsInterface {
         //2
         k = 0;
         //3
-        yk = ak + (3.0 - Math.sqrt(5.0))/2.0 * (bk - ak);
+        yk = ak + (3.0 - Math.sqrt(5.0)) / 2.0 * (bk - ak);
         zk = ak + bk - yk;
 
         do {
@@ -103,7 +104,7 @@ public class GoldenRatio implements MethodsInterface {
                 doNextStep();
             }
         } while (delta > l);
-        result = (ak1 + bk1)/2;
+        result = (ak1 + bk1) / 2;
 
 
     }
@@ -127,16 +128,13 @@ public class GoldenRatio implements MethodsInterface {
                 System.out.println("Найти интервал методом Свенна y/n?");
                 answer = reader.readLine();
                 answer.toLowerCase();
-                if (answer.equals("y"))  {
+                if (answer.equals("y")) {
                     useSvenn();
                     break;
-                }
-                else
-                if(answer.equals("n")) {
+                } else if (answer.equals("n")) {
                     useManualInput();
                     break;
-                }
-                else {
+                } else {
                     System.out.println("Некорректный ввод. Повторите попытку");
                 }
             }

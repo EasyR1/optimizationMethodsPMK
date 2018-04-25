@@ -1,13 +1,15 @@
 package methods.parabolMethod;
 
+import formulareader.FormulaInterface;
 import formulareader.FormulaReader;
 import methods.MethodsInterface;
+import methods.SimpleStarting;
 
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class ParabolMethod implements MethodsInterface {
+public class ParabolMethod implements MethodsInterface, SimpleStarting {
     private FormulaReader function;
     private Scanner sc;
     //Вводимые
@@ -181,13 +183,24 @@ public class ParabolMethod implements MethodsInterface {
     }
 
     @Override
-    public void inputOptions(FormulaReader formulaReader) {
-        function = formulaReader;
+    public void inputOptions(FormulaInterface formulaReader) {
+        function = (FormulaReader) formulaReader;
         inputXandEps();
     }
 
     @Override
     public double returnResult() {
         return result;
+    }
+
+    @Override
+    public double simpleStart(String function) {
+        this.function = new FormulaReader(function);
+        x1 = 0;
+        deltaX = 0.01;
+        eps1 = 0.001;
+        eps2 = 0.002;
+        calcMethod();
+        return returnResult();
     }
 }
