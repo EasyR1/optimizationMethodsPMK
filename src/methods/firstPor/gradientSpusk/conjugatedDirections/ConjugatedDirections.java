@@ -9,6 +9,7 @@ import methods.parabolMethod.ParabolMethod;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 
 public class ConjugatedDirections implements MethodsInterface{
     //служебные
@@ -23,15 +24,14 @@ public class ConjugatedDirections implements MethodsInterface{
     private double[][] dCop;
     private double[] yi;
     private double[] yi1;
-    private double[] yn;
     private double[] y0;
     private double ti;
     private int n;
     private int i;
     private int k;
     private double[] result;
-    private double[] xk1;
-    private double[] xk;
+    private double[] xi1;
+    private double[] xi;
     private double[] y1;
 
     public ConjugatedDirections() {
@@ -101,62 +101,83 @@ public class ConjugatedDirections implements MethodsInterface{
     }
 
     private void calcMethod() {
+        System.out.println(this);
         //1
         d[0][0] = d[n][0];
         d[0][0] = d[n][0];
         i = 0;
         k = 0;
         yi = copy(x0);
-        //2
-        ti = findMin();
-        yi1 = summ(yi, multiplication(ti, d[i]));
-        //3
-        if (i < n-1) {
-            i++;
-            //к шагу 2
-        }
-        if (i == n-1) {
-            if (cheсkSimilarity(yn, y0)) {
-                result = yn;
-            }
-            else {
+        do {
+            //2
+            ti = findMin();
+            yi1 = summ(yi, multiplication(ti, d[i]));
+            //3
+            if (i < n-1) {
                 i++;
                 //к шагу 2
+                renameForStep2();
+                continue;
             }
-        }
-        if (yi1 == y0) {
-            result = yi1;
-        }
-        //4
-        xk1 = copy(yi1);
-        dCop = copy(d);
-        if ((calcNorma(subtraction(xk1, xk))) < eps) {
-            result = xk1;
-        }
-        else {
-            dCop[0] = copy(subtraction(yi1, y1));
-            dCop[n] = copy(subtraction(yi1, y1));
-            for (int i = 1; i < n; i++) {       //n-1 т.е n
-                dCop[i] = d[i+1];
+            if (i == n-1) {
+                if (cheсkSimilarity(yi, y0)) {      //yi == yn?
+                    result = yi;                    //yi == yn?
+                    break;
+                }
+                else {
+                    i++;
+                    //к шагу 2
+                    renameForStep2();
+                    continue;
+                }
             }
-        }
+            if (yi1 == y0) {
+                result = yi1;
+                break;
+            }
+            //4
+            xi1 = copy(yi1);
+            dCop = copy(d);
+            if ((calcNorma(subtraction(xi1, xi))) < eps) {
+                result = xi1;
+                break;
+            }
+            else {
+                dCop[0] = copy(subtraction(yi1, y1));
+                dCop[n] = copy(subtraction(yi1, y1));
+                for (int i = 1; i < n; i++) {       //n-1 т.е n
+                    dCop[i] = d[i+1];
+                }
+            }
 
-        if (rank(d[1], d[2]) == n) {
-            for(int j = 0; j < n+1; j++) {      //До n. т.е до n+1
-                d[j] = dCop[j];
-                y0 = xk1;
+            if (rank(d[1], d[2]) == n) {
+                for(int j = 0; j < n+1; j++) {      //До n. т.е до n+1
+                    d[j] = dCop[j];
+                }
+                y0 = xi1;
                 k++;
                 i = 0;
                 //к шагу 2
-            }
-        }
+                renameForStep2();
+                continue;
 
-        if (rank(d[1], d[2]) < n) {
-            //Возможна ошибка
-            y0 = xk1;
-            k++;
-            i = 0;
-        }
+            }
+
+            if (rank(d[1], d[2]) < n) {
+                //Возможна ошибка
+                //d[j] = d[j]
+                y0 = xi1;
+                k++;
+                i = 0;
+            }
+        } while (renameForStep2());
+        System.out.println("x = " + result + "\nf(x*) = " + formula.calculateFormula(result[0], result[1]));
+    }
+
+    private boolean renameForStep2() {
+        yi = yi1;
+        xi = xi1;
+        return true;
     }
 
     private double[] subtraction(double[] a, double[] b) {
@@ -243,5 +264,18 @@ public class ConjugatedDirections implements MethodsInterface{
         //Меняем y на вторую строку матрицы xi
         func = func.replace("y", "(" + y[1] + "+" + d[this.i][1] + "*x)");     // х - это искомое t
         return func;
+    }
+
+    @Override
+    public String toString() {
+        return "ConjugatedDirections{" +
+                "x0=" + Arrays.toString(x0) +
+                ", yi=" + Arrays.toString(yi) +
+                ", yi1=" + Arrays.toString(yi1) +
+                ", y0=" + Arrays.toString(y0) +
+                ", xi1=" + Arrays.toString(xi1) +
+                ", xi=" + Arrays.toString(xi) +
+                ", y1=" + Arrays.toString(y1) +
+                '}';
     }
 }
