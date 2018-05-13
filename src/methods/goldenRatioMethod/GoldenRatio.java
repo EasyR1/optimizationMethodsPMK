@@ -3,13 +3,14 @@ package methods.goldenRatioMethod;
 import formulareader.FormulaInterface;
 import formulareader.FormulaReader;
 import methods.MethodsInterface;
+import methods.SimpleStarting;
 import methods.svenn.Svenn;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class GoldenRatio implements MethodsInterface {
+public class GoldenRatio implements MethodsInterface, SimpleStarting {
     //имеющиеся для работы
     private FormulaReader formula;
     private BufferedReader reader;
@@ -168,5 +169,14 @@ public class GoldenRatio implements MethodsInterface {
                 e.printStackTrace();
             }
         }
+    }
+
+    @Override
+    public double simpleStart(String formula) {
+        this.formula = new FormulaReader(formula);
+        l = 0.2;
+        useSvenn();
+        calcMethod();
+        return result;
     }
 }

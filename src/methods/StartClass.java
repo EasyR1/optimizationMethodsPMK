@@ -3,7 +3,7 @@ package methods;
 import formulareader.FormulaInterface;
 import formulareader.FormulaReader;
 import formulareader.FormulaReaderWithTwoArguments;
-import methods.firstPor.gradientSpusk.conjugatedDirections.ConjugatedDirections;
+import methods.firstPor.gradientSpusk.dfp.DFPMethod;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -43,6 +43,6 @@ public class StartClass {
     }
 
     public static void main(String[] args) {
-        new StartClass(new ConjugatedDirections());
+        new StartClass(new DFPMethod());
     }
 }
