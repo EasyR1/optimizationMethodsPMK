@@ -201,10 +201,10 @@ public class ParabolMethod implements MethodsInterface, SimpleStarting {
     @Override
     public double simpleStart(String function) {
         this.function = new FormulaReader(function);
-        x1 = 1;
-        deltaX = 0.5;
-        eps1 = 0.1;
-        eps2 = 0.15;
+        x1 = 0.1;
+        deltaX = 0.1;
+        eps1 = 0.01;
+        eps2 = 0.015;
         calcMethod();
         return returnResult();
     }

@@ -4,6 +4,8 @@ import formulareader.FormulaInterface;
 import formulareader.FormulaReader;
 import formulareader.FormulaReaderWithTwoArguments;
 import methods.firstPor.gradientSpusk.dfp.DFPMethod;
+import methods.goldenRatioMethod.GoldenRatio;
+import methods.parabolMethod.ParabolMethod;
 
 import java.io.BufferedReader;
 import java.io.IOException;

@@ -6,7 +6,6 @@ import formulareader.FormulaReaderWithTwoArguments;
 import methods.MethodsInterface;
 import methods.SimpleStarting;
 import methods.goldenRatioMethod.GoldenRatio;
-import methods.parabolMethod.ParabolMethod;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -25,7 +24,7 @@ public class DFPMethod implements MethodsInterface {
     //использующиеся в вычислениях
     private int k = 0;
     private double[][] aMatrix= {{1,0},{0,1}};
-    private String[][] gradF = {{"4x-2y+2"},{"-2x+2y"}};
+    private String[][] gradF = {{"4*x-2*y+2"},{"-2*x+2*y"}};
     //Появляются в вычислениях
     private double[][] result;
     private double[][] currentGrad = new double[2][1];
@@ -66,12 +65,14 @@ public class DFPMethod implements MethodsInterface {
             currentGrad = grad(xk_new[0][0], xk_new[1][0]);
             //4
             if (normaGrad() < eps1) {
-                result = xk_old;
+                result = xk_new;
+                printResult();
                 return;
             }
             //5
             if(k > m) {
-                result = xk_old;
+                result = xk_new;
+                printResult();
                 return;
             }
             if(k >= 1) {
@@ -85,18 +86,19 @@ public class DFPMethod implements MethodsInterface {
                 aMatrix = summa(aMatrix,a_new);
             }
             //10
-            dk = division(new double[2][2],aMatrix);
+            dk = multiple(difference(new double[2][2],aMatrix),currentGrad);
             //11
             tk = findMin();
             //12
             double[][] bufxk = xk_new.clone();
             xk_new = summa(xk_new, multiple(tk, dk));   //Перегрузка multiple. Умножение матрицы на число
-            xk_old = bufxk;
+            xk_old = bufxk.clone();
             //13
-            if (norma(division(xk_new, xk_old)) < eps2 &&
+            if (norma(difference(xk_new, xk_old)) < eps2 &&
                     Math.abs(calcF(xk_new[0][0], xk_new[1][0]) - calcF(xk_old[0][0], xk_old[1][0])) < eps2) {
                 if (flag) {
                     result = xk_new;
+                    printResult();
                     return;
                 }
                 flag = true;    //Проверка для k и k+1;
@@ -107,8 +109,16 @@ public class DFPMethod implements MethodsInterface {
                 continue;       //к шагу 3
             }
         }
+    }
 
-
+    private void printResult() {
+        System.out.print("(");
+        for (int i = 0; i < result.length; i++) {
+            for (int j = 0; j < result[0].length; j++) {
+                System.out.print(result[i][j] + " ");
+            }
+        }
+        System.out.print(")");
     }
 
     private double[][] terribleFraction() {
@@ -128,9 +138,11 @@ public class DFPMethod implements MethodsInterface {
     private String convertToStringFormula() {
         String func = formula.getInputFunction();
         //Меняем х на первую строку матрицы уi
-        func = func.replaceAll("x", "(" + xk_new[0][0] + "+" + dk[0][0] + "*x)");     // х - это искомое t
+        func = func.replaceAll("x",
+                "(" + (xk_new[0][0] > 0? xk_new[0][0]:("(0" + xk_new[0][0] + ")"))  + "+" + (dk[0][0] > 0? dk[0][0]:("(0" + dk[0][0] + ")")) + "*x)");     // х - это искомое t
         //Меняем y на вторую строку матрицы xi
-        func = func.replaceAll("y", "(" + xk_new[1][0] + "+" + dk[1][0] + "*x)");     // х - это искомое t
+        func = func.replaceAll("y",
+                "(" + (xk_new[1][0] > 0? xk_new[1][0]:("(0" + xk_new[1][0] + ")")) + "+" + (dk[1][0] > 0? dk[1][0]:("(0" + dk[1][0] + ")")) + "*x)");     // х - это искомое t
         return func;
     }
 
@@ -153,9 +165,7 @@ public class DFPMethod implements MethodsInterface {
         double[][] result = new double[b.length][b[0].length];
         for (int i = 0; i < b.length; i++) {
             for (int j = 0; j < b[0].length; j++) {
-                for (int k = 0; k < b.length; k++) {
-                    result[i][j] = a * b[k][j];
-                }
+                    result[i][j] = a * b[i][j];
             }
         }
         return result;
@@ -228,9 +238,38 @@ public class DFPMethod implements MethodsInterface {
             secondGrad = '0' + secondGrad;
         }
 
+        firstGrad = magicConverterString(firstGrad);
+        secondGrad = magicConverterString(secondGrad);
+
         currentGrad[0][0] = new FormulaReader(firstGrad).calculateFormula(0);
         currentGrad[1][0] = new FormulaReader(secondGrad).calculateFormula(0);  // FIXME: 12.05.2018 Critical Bug FormulaReader for -x
         return currentGrad;
+    }
+
+    private String magicConverterString(String convertible) {
+        String result = "";
+        boolean flagNumber = false;
+        char xOld = convertible.charAt(0);
+        for (char x :
+                convertible.toCharArray()) {
+
+            if (flagNumber){
+                if ("+-*/".contains(x+"")) {
+                    result += ")";
+                    flagNumber = false;
+                }
+            }
+
+            if ("+-*/".contains(xOld+"") && "+-*/".contains(x+"")) {
+                result += ("(0");
+                flagNumber = true;
+            }
+            result += x;
+            xOld = x;
+        }
+        if (flagNumber)
+            result += ")";
+        return result;
     }
 
     private double calcF(double x, double y) {
