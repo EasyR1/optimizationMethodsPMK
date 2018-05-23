@@ -54,7 +54,9 @@ public class GradientSpusk implements MethodsInterface {
         //2
         k = 0;
         //3
-        double[] gradFxk = gradF(x0, x1);
+        gradF = gradF(x0, x1);
+        //4
+
 
     }
 
@@ -102,5 +104,9 @@ public class GradientSpusk implements MethodsInterface {
         fxk[0] = 6*x1 + 4*x2 - 8;
         fxk[1] = 4*x2 - 12;
         return fxk;
+    }
+
+    private double normaGrad() {
+        return Math.sqrt(Math.pow(gradF[0], 2) + Math.pow(gradF[1], 2));
     }
 }

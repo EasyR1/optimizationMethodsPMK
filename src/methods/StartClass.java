@@ -46,5 +46,6 @@ public class StartClass {
 
     public static void main(String[] args) {
         new StartClass(new DFPMethod());
+        //2*x^2+y^2-2*x*y+2*x+6
     }
 }

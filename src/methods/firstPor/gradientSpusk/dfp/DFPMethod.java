@@ -122,7 +122,6 @@ public class DFPMethod implements MethodsInterface {
     }
 
     private double[][] terribleFraction() {
-        // TODO: 12.05.2018 Реализация
         double[][] drob1 = division(multiple(deltaX, transpose(deltaX)),
                                     multiple(transpose(deltaX), deltaG));
         double[][] drob2 = division(multiple(multiple(multiple(aMatrix,deltaG),transpose(deltaG)),aMatrix),
@@ -136,7 +135,8 @@ public class DFPMethod implements MethodsInterface {
     }
 
     private String convertToStringFormula() {
-        String func = formula.getInputFunction();
+        //Начало поиска минимума
+        String func = formula.getInputFunction();   //Получение строковой формулы
         //Меняем х на первую строку матрицы уi
         func = func.replaceAll("x",
                 "(" + (xk_new[0][0] > 0? xk_new[0][0]:("(0" + xk_new[0][0] + ")"))  + "+" + (dk[0][0] > 0? dk[0][0]:("(0" + dk[0][0] + ")")) + "*x)");     // х - это искомое t
@@ -148,7 +148,7 @@ public class DFPMethod implements MethodsInterface {
 
 
     private double[][] multiple(double[][] a, double[][] b) {
-        //Правильно?
+        //Правильно? да
         double[][] result = new double[a.length][b[0].length];
         for (int i = 0; i < a.length; i++) {
             for (int j = 0; j < b[0].length; j++) {
@@ -161,7 +161,7 @@ public class DFPMethod implements MethodsInterface {
     }
 
     private double[][] multiple(double a, double[][] b) {
-        //Правильно?
+        //Правильно? да
         double[][] result = new double[b.length][b[0].length];
         for (int i = 0; i < b.length; i++) {
             for (int j = 0; j < b[0].length; j++) {
@@ -238,45 +238,18 @@ public class DFPMethod implements MethodsInterface {
             secondGrad = '0' + secondGrad;
         }
 
-        firstGrad = magicConverterString(firstGrad);
-        secondGrad = magicConverterString(secondGrad);
-
         currentGrad[0][0] = new FormulaReader(firstGrad).calculateFormula(0);
         currentGrad[1][0] = new FormulaReader(secondGrad).calculateFormula(0);  // FIXME: 12.05.2018 Critical Bug FormulaReader for -x
         return currentGrad;
     }
 
-    private String magicConverterString(String convertible) {
-        String result = "";
-        boolean flagNumber = false;
-        char xOld = convertible.charAt(0);
-        for (char x :
-                convertible.toCharArray()) {
-
-            if (flagNumber){
-                if ("+-*/".contains(x+"")) {
-                    result += ")";
-                    flagNumber = false;
-                }
-            }
-
-            if ("+-*/".contains(xOld+"") && "+-*/".contains(x+"")) {
-                result += ("(0");
-                flagNumber = true;
-            }
-            result += x;
-            xOld = x;
-        }
-        if (flagNumber)
-            result += ")";
-        return result;
-    }
 
     private double calcF(double x, double y) {
         return formula.calculateFormula(x, y);
     }
 
     private void initializeVariables() {
+        //Ввод начальных данных
         //1
         while (true) {
             try {
