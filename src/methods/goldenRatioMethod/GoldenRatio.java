@@ -1,14 +1,16 @@
 package methods.goldenRatioMethod;
 
+import formulareader.FormulaInterface;
 import formulareader.FormulaReader;
 import methods.MethodsInterface;
+import methods.SimpleStarting;
 import methods.svenn.Svenn;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class GoldenRatio implements MethodsInterface {
+public class GoldenRatio implements MethodsInterface, SimpleStarting {
     //имеющиеся для работы
     private FormulaReader formula;
     private BufferedReader reader;
@@ -34,7 +36,7 @@ public class GoldenRatio implements MethodsInterface {
 
     @Override
     public void start() {
-        System.out.println("----------------Метод Золотого Сечения-------------------");
+        System.out.println();
         inputSegment();
         calcMethod();
         System.out.println("x*    = " + result);
@@ -51,8 +53,8 @@ public class GoldenRatio implements MethodsInterface {
     }
 
     @Override
-    public void inputOptions(FormulaReader formulaReader) {
-        formula = formulaReader;
+    public void inputOptions(FormulaInterface formulaReader) {
+        formula = (FormulaReader) formulaReader;
         System.out.println("Введите точность l > 0");
         try {
             do {
@@ -73,11 +75,12 @@ public class GoldenRatio implements MethodsInterface {
     public double returnResult() {
         return result;
     }
+
     private void calcMethod() {
         //2
         k = 0;
         //3
-        yk = ak + (3.0 - Math.sqrt(5.0))/2.0 * (bk - ak);
+        yk = ak + (3.0 - Math.sqrt(5.0)) / 2.0 * (bk - ak);
         zk = ak + bk - yk;
 
         do {
@@ -102,13 +105,13 @@ public class GoldenRatio implements MethodsInterface {
                 doNextStep();
             }
         } while (delta > l);
-        result = (ak1 + bk1)/2;
+        result = (ak1 + bk1) / 2;
 
 
     }
 
     private void doNextStep() {
-        //при переходе к следующему шагу увеличиваем k на 1, т.е записываем в старое k новое k
+        //при переходе к следующему шагу увеличиваем k на 1, т.е записываем в старое k новое k1
         ak = ak1;
         bk = bk1;
         yk = yk1;
@@ -126,16 +129,13 @@ public class GoldenRatio implements MethodsInterface {
                 System.out.println("Найти интервал методом Свенна y/n?");
                 answer = reader.readLine();
                 answer.toLowerCase();
-                if (answer.equals("y"))  {
+                if (answer.equals("y")) {
                     useSvenn();
                     break;
-                }
-                else
-                if(answer.equals("n")) {
+                } else if (answer.equals("n")) {
                     useManualInput();
                     break;
-                }
-                else {
+                } else {
                     System.out.println("Некорректный ввод. Повторите попытку");
                 }
             }
@@ -169,5 +169,15 @@ public class GoldenRatio implements MethodsInterface {
                 e.printStackTrace();
             }
         }
+    }
+
+    @Override
+    public double simpleStart(String formula) {
+        this.formula = new FormulaReader(formula);
+        l = 0.000001;
+        ak = -4;
+        bk = 2;
+        calcMethod();
+        return result;
     }
 }

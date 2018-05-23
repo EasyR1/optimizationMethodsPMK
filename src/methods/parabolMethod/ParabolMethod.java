@@ -1,13 +1,15 @@
 package methods.parabolMethod;
 
+import formulareader.FormulaInterface;
 import formulareader.FormulaReader;
 import methods.MethodsInterface;
+import methods.SimpleStarting;
 
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class ParabolMethod implements MethodsInterface {
+public class ParabolMethod implements MethodsInterface, SimpleStarting {
     private FormulaReader function;
     private Scanner sc;
     //Вводимые
@@ -148,6 +150,11 @@ public class ParabolMethod implements MethodsInterface {
         else if (selectedX < x3)
             rightPoints.add(x3);
 
+        if (selectedX > xSh)
+            leftPoints.add(xSh);
+        else if (selectedX < xSh)
+            rightPoints.add(xSh);
+
         x1 = getMaximum(leftPoints);
         x2 = selectedX;
         x3 = getMinimum(rightPoints);
@@ -181,13 +188,24 @@ public class ParabolMethod implements MethodsInterface {
     }
 
     @Override
-    public void inputOptions(FormulaReader formulaReader) {
-        function = formulaReader;
+    public void inputOptions(FormulaInterface formulaReader) {
+        function = (FormulaReader) formulaReader;
         inputXandEps();
     }
 
     @Override
     public double returnResult() {
         return result;
+    }
+
+    @Override
+    public double simpleStart(String function) {
+        this.function = new FormulaReader(function);
+        x1 = 0.1;
+        deltaX = 0.1;
+        eps1 = 0.01;
+        eps2 = 0.015;
+        calcMethod();
+        return returnResult();
     }
 }

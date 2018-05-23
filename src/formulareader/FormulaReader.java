@@ -3,14 +3,16 @@ package formulareader;
 import java.util.Scanner;
 import java.util.Stack;
 
-public class FormulaReader {
+public class FormulaReader implements FormulaInterface{
     private String formulaRPE;
     private Stack<String> stack;
+    private String inputFunction;
     private String numbers;
     private String operators;
     private String variables;
     private String functions;
     private String currentSymbol;
+    private String lastSymbol = "";
 
     public FormulaReader(String inputFunction) {
         stack = new Stack<>();
@@ -18,12 +20,32 @@ public class FormulaReader {
         operators = "^*/+-";
         variables = "XxYy";
         functions = "sin|cos|tg|ctg|exp|sqrt|ln";
-        FunctionToRPE convertToRPE = new FunctionToRPE(inputFunction, numbers, operators, variables, functions);
+        this.inputFunction = convert(inputFunction);
+        FunctionToRPE convertToRPE = new FunctionToRPE(this.inputFunction, numbers, operators, variables, functions);
         formulaRPE = convertToRPE.convertationToRPE();
 
     }
 
-    //Переделать метод на работу с n переменными, установить проверку!
+    private String convert(String inputFunction) {
+        boolean flag = false;
+        char[] input = inputFunction.toCharArray();
+        String result = "";
+        for (int i = 0; i < inputFunction.length(); i++) {
+            if (flag && operators.contains(input[i]+"")) {
+                flag = false;
+                result += ")";
+            }
+            if (operators.contains(input[i] + "") && operators.contains(input[i+1] + "")) {
+                flag = true;
+                result += input[i++] + "(0" ;
+            }
+            result += input[i];
+        }
+        if (flag)
+            result += ")";
+        return result;
+    }
+
     public double calculateFormula(double x) {
         double a;
         double b;
@@ -47,7 +69,10 @@ public class FormulaReader {
 
             if (operators.contains(currentSymbol)) {
                 b = Double.parseDouble(stack.pop());
-                a = Double.parseDouble(stack.pop());
+                if (stack.isEmpty())
+                    a = 0;
+                else
+                    a = Double.parseDouble(stack.pop());
                 switch (currentSymbol) {
                     case "+":
                         stack.push((a + b) + "");
@@ -125,11 +150,27 @@ public class FormulaReader {
         return formulaRPE;
     }
 
+    public void setVariables(String variables) {
+        this.variables = variables;
+    }
+
+    public void setFormulaRPE(String formulaRPE) {
+        this.formulaRPE = formulaRPE;
+    }
+
+    public String getVariables() {
+        return variables;
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Function: ");
         FormulaReader formulaReader = new FormulaReader(sc.next());
         System.out.print(formulaReader.getFormulaRPE() + "\nx = ");
         System.out.println(formulaReader.calculateFormula(sc.nextDouble()));
+    }
+
+    public String getInputFunction() {
+        return inputFunction;
     }
 }
