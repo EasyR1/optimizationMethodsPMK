@@ -1,10 +1,9 @@
-package methods.goldenRatioMethod;
+package methods.zero;
 
 import formulareader.FormulaInterface;
 import formulareader.FormulaReader;
 import methods.MethodsInterface;
 import methods.SimpleStarting;
-import methods.svenn.Svenn;
 
 import java.io.BufferedReader;
 import java.io.IOException;

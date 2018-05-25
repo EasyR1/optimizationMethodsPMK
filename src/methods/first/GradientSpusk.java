@@ -1,4 +1,4 @@
-package methods.firstPor.gradientSpusk.gradientSpusk;
+package methods.first;
 
 import formulareader.FormulaInterface;
 import formulareader.FormulaReader;

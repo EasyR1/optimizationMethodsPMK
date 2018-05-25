@@ -1,11 +1,11 @@
-package methods.firstPor.gradientSpusk.dfp;
+package methods.first;
 
 import formulareader.FormulaInterface;
 import formulareader.FormulaReader;
 import formulareader.FormulaReaderWithTwoArguments;
 import methods.MethodsInterface;
 import methods.SimpleStarting;
-import methods.goldenRatioMethod.GoldenRatio;
+import methods.zero.GoldenRatio;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -131,7 +131,7 @@ public class DFPMethod implements MethodsInterface {
 
     private double findMin() {
         SimpleStarting method = new GoldenRatio();
-        return method.simpleStart(convertToStringFormula());        // FIXME: 12.05.2018 Critical Bug for FormulaReader
+        return method.simpleStart(convertToStringFormula());
     }
 
     private String convertToStringFormula() {
@@ -239,7 +239,7 @@ public class DFPMethod implements MethodsInterface {
         }
 
         currentGrad[0][0] = new FormulaReader(firstGrad).calculateFormula(0);
-        currentGrad[1][0] = new FormulaReader(secondGrad).calculateFormula(0);  // FIXME: 12.05.2018 Critical Bug FormulaReader for -x
+        currentGrad[1][0] = new FormulaReader(secondGrad).calculateFormula(0);
         return currentGrad;
     }
 
@@ -303,10 +303,5 @@ public class DFPMethod implements MethodsInterface {
             }
         }
         k = 0;
-    }
-
-    public static void main(String[] args) {
-        double [][] a = {{1, 2},{3, 4}, {5, 6}};
-        System.out.println(a.length + " " + a[0].length);
     }
 }

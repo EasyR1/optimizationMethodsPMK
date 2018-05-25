@@ -1,9 +1,8 @@
-package methods.dichotomyMethod;
+package methods.zero;
 
 import formulareader.FormulaInterface;
 import formulareader.FormulaReader;
 import methods.MethodsInterface;
-import methods.svenn.Svenn;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;

@@ -3,9 +3,8 @@ package methods;
 import formulareader.FormulaInterface;
 import formulareader.FormulaReader;
 import formulareader.FormulaReaderWithTwoArguments;
-import methods.firstPor.gradientSpusk.dfp.DFPMethod;
-import methods.goldenRatioMethod.GoldenRatio;
-import methods.parabolMethod.ParabolMethod;
+import methods.first.DFPMethod;
+import methods.second.Newton;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -45,7 +44,7 @@ public class StartClass {
     }
 
     public static void main(String[] args) {
-        new StartClass(new DFPMethod());
+        new StartClass(new Newton());
         //2*x^2+y^2-2*x*y+2*x+6
     }
 }

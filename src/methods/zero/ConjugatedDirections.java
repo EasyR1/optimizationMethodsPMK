@@ -1,10 +1,10 @@
-package methods.firstPor.gradientSpusk.conjugatedDirections;
+package methods.zero;
 
 import formulareader.FormulaInterface;
 import formulareader.FormulaReaderWithTwoArguments;
 import methods.MethodsInterface;
 import methods.SimpleStarting;
-import methods.parabolMethod.ParabolMethod;
+import methods.zero.ParabolMethod;
 
 import java.io.BufferedReader;
 import java.io.IOException;
