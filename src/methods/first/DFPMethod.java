@@ -112,13 +112,14 @@ public class DFPMethod implements MethodsInterface {
     }
 
     private void printResult() {
-        System.out.print("(");
+        System.out.print("x* = (");
         for (int i = 0; i < result.length; i++) {
             for (int j = 0; j < result[0].length; j++) {
                 System.out.print(result[i][j] + " ");
             }
         }
-        System.out.print(")");
+        System.out.println(")");
+        System.out.println("f(x*) = " + calcF(result[0][0],result[1][0]));
     }
 
     private double[][] terribleFraction() {

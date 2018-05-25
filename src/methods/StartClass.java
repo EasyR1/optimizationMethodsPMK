@@ -4,7 +4,8 @@ import formulareader.FormulaInterface;
 import formulareader.FormulaReader;
 import formulareader.FormulaReaderWithTwoArguments;
 import methods.first.DFPMethod;
-import methods.second.Newton;
+import methods.zero.DichotomyMethod;
+import methods.zero.GoldenRatio;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -44,7 +45,8 @@ public class StartClass {
     }
 
     public static void main(String[] args) {
-        new StartClass(new Newton());
+        double[] arr = {-1,1};
+        new StartClass(new GoldenRatio());
         //2*x^2+y^2-2*x*y+2*x+6
     }
 }

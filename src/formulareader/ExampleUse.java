@@ -1,10 +1,14 @@
 package formulareader;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Scanner;
 
 public class ExampleUse {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Scanner sc = new Scanner(System.in);
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         System.out.print("Function: ");
         FormulaReader formulaReader = new FormulaReader(sc.next());
@@ -17,7 +21,7 @@ public class ExampleUse {
             switch (sc.nextInt()) {
                 case 1:
                     System.out.print("x = ");
-                    double x = sc.nextDouble();
+                    double x = Double.parseDouble(reader.readLine());
                     //Вывод результата
                     System.out.println(formulaReader.calculateFormula(x));
                     break;

@@ -124,8 +124,9 @@ public class Newton implements MethodsInterface {
             }
             else {
                 flag = false;
-                k++;
+
             }
+            k++;
             xk = xk_new.clone();
         }
     }

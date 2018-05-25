@@ -16,7 +16,7 @@ public class FormulaReader implements FormulaInterface{
 
     public FormulaReader(String inputFunction) {
         stack = new Stack<>();
-        numbers = "0123456789.";
+        numbers = "0123456789E.";
         operators = "^*/+-";
         variables = "XxYy";
         functions = "sin|cos|tg|ctg|exp|sqrt";
