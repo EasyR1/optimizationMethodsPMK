@@ -101,10 +101,12 @@ public class GradientSpusk implements MethodsInterface {
     private String convertToStringFormula() {
         //Начало поиска минимума
         String func = formula.getInputFunction();   //Получение строкового представления формулы
-        //Меняем х на первую строку матрицы xk
-        func = func.replaceAll("x", "(" + xk[0][0] + "-x*" + currentGrad[0][0] + ")");     // х - это искомое t
-        //Меняем y на вторую строку матрицы xk
-        func = func.replaceAll("y", "(" + xk[1][0] + "-x*" + currentGrad[1][0] + ")");     // х - это искомое t
+        //Меняем х на первую строку матрицы xi
+        func = func.replaceAll("x",
+                "(" + (xk[0][0] > 0? xk[0][0]:("(0" + xk[0][0] + ")"))  + "-" + (currentGrad[0][0] > 0? currentGrad[0][0]:("(0" + currentGrad[0][0] + ")")) + "*x)");     // х - это искомое t
+        //Меняем y на вторую строку матрицы xi
+        func = func.replaceAll("y",
+                "(" + (xk[1][0] > 0? xk[1][0]:("(0" + xk[1][0] + ")")) + "-" + (currentGrad[1][0] > 0? currentGrad[1][0]:("(0" + currentGrad[1][0] + ")")) + "*x)");     // х - это искомое t
         return func;
     }
 

@@ -4,6 +4,7 @@ import formulareader.FormulaInterface;
 import formulareader.FormulaReader;
 import formulareader.FormulaReaderWithTwoArguments;
 import methods.first.DFPMethod;
+import methods.first.GradientSpusk;
 import methods.zero.DichotomyMethod;
 import methods.zero.GoldenRatio;
 
@@ -46,7 +47,7 @@ public class StartClass {
 
     public static void main(String[] args) {
         double[] arr = {-1,1};
-        new StartClass(new GoldenRatio());
+        new StartClass(new GradientSpusk());
         //2*x^2+y^2-2*x*y+2*x+6
     }
 }
