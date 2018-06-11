@@ -1,4 +1,4 @@
-package methods.parabolMethod;
+package methods.zero;
 
 import formulareader.FormulaInterface;
 import formulareader.FormulaReader;

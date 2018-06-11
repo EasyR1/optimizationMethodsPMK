@@ -158,7 +158,12 @@ public class FunctionToRPE {
     private int doNumber(String currSym, int iter) {
         String buffer = "";
         while (numbers.contains(currSym)) {
-            buffer += currSym;
+            if(currSym.equals("E")) {
+                buffer += currSym + inputString.charAt(++iter);
+            } else {
+                buffer += currSym;
+            }
+
             iter++;
             if (iter < inputString.length())
                 currSym = "" + inputString.charAt(iter);

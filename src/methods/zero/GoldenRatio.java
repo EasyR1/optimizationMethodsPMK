@@ -1,10 +1,9 @@
-package methods.goldenRatioMethod;
+package methods.zero;
 
 import formulareader.FormulaInterface;
 import formulareader.FormulaReader;
 import methods.MethodsInterface;
 import methods.SimpleStarting;
-import methods.svenn.Svenn;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -175,8 +174,8 @@ public class GoldenRatio implements MethodsInterface, SimpleStarting {
     public double simpleStart(String formula) {
         this.formula = new FormulaReader(formula);
         l = 0.000001;
-        ak = -4;
-        bk = 2;
+        ak = -2;
+        bk = 3;
         calcMethod();
         return result;
     }

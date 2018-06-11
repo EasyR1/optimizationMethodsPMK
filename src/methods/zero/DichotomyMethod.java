@@ -1,10 +1,11 @@
-package methods.dichotomyMethod;
+package methods.zero;
 
 import formulareader.FormulaInterface;
 import formulareader.FormulaReader;
 import methods.MethodsInterface;
-import methods.svenn.Svenn;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -143,9 +144,9 @@ public class DichotomyMethod implements MethodsInterface {
 
             if (calcf(y) <= calcf(z)) {
                 //a не меняется
-                b = z;
+                b = y;
             } else {
-                a = y;
+                a = z;
                 //b не меняется
             }
         } while (Math.abs(b - a) > l);

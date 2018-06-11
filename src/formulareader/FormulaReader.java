@@ -3,6 +3,31 @@ package formulareader;
 import java.util.Scanner;
 import java.util.Stack;
 
+/**
+ * FormulaReader
+ *
+ * Ядро основных вычислений функций с одним аргументом f(х)
+ * При потсчетах используется алгоритм обратной польской записи
+ *
+ * Поддерживает следующие операции:
+ * Стандартные операторы: + - * /
+ * Возведение в степень ^
+ * Пример записи: 2^x
+ * Триганометрические функции sin() cos() tg() ctg()
+ * Экспонента и корень sqrt() exp()
+ * Пример: exp(2) это e в степени 2
+ *
+ * Поддерживает обычную запись чисел и с E:
+ * x; 2; 2-4; -4x; 3.5; 6E-3;
+ * Не рекоммендуется, но обробатывается:
+ * х+-3
+ * Желательно
+ * х+(-3)
+ *
+ * @author Роман
+ * @version 0.2.1
+ *
+ */
 public class FormulaReader implements FormulaInterface{
     private String formulaRPE;
     private Stack<String> stack;
@@ -14,9 +39,14 @@ public class FormulaReader implements FormulaInterface{
     private String currentSymbol;
     private String lastSymbol = "";
 
+    /**
+     * Получает строковое представление функции
+     * Преобразует его в представление обратной польской записи
+     * @param inputFunction
+     */
     public FormulaReader(String inputFunction) {
         stack = new Stack<>();
-        numbers = "0123456789.";
+        numbers = "0123456789E.";
         operators = "^*/+-";
         variables = "XxYy";
         functions = "sin|cos|tg|ctg|exp|sqrt|ln";
