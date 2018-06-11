@@ -5,6 +5,12 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Scanner;
 
+/**
+ * Пример использования FormulaReader без интерфейса
+ * Используется при проверки правильности вычисления formulareader
+ *
+ * @deprecated нет необходимости в использовании
+ */
 public class ExampleUse {
     public static void main(String[] args) throws IOException {
         Scanner sc = new Scanner(System.in);

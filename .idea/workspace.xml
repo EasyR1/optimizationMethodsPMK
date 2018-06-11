@@ -1,19 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="861d0de1-1f9b-48c2-b35f-b265c2647a7a" name="Default" comment="Реализовано частично универсальное ДФП">
-      <change afterPath="$PROJECT_DIR$/src/methods/math/MatrixMath.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/methods/second/Newton.java" afterDir="false" />
+    <list default="true" id="861d0de1-1f9b-48c2-b35f-b265c2647a7a" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/methods/zero/PairedGuides.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MetodOptZolotoeSechenie/formulareader/FormulaReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MetodOptZolotoeSechenie/formulareader/FormulaReader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/formulareader/ExampleUse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/formulareader/ExampleUse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/formulareader/FormulaInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/formulareader/FormulaInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/formulareader/FormulaReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/formulareader/FormulaReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/methods/MethodsInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/methods/MethodsInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/methods/SimpleStarting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/methods/SimpleStarting.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/methods/StartClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/methods/StartClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/methods/dichotomyMethod/DichotomyMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/methods/zero/DichotomyMethod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/methods/firstPor/gradientSpusk/conjugatedDirections/ConjugatedDirections.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/methods/zero/ConjugatedDirections.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/methods/firstPor/gradientSpusk/dfp/DFPMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/methods/first/DFPMethod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/methods/firstPor/gradientSpusk/gradientSpusk/GradientSpusk.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/methods/first/GradientSpusk.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/methods/goldenRatioMethod/GoldenRatio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/methods/zero/GoldenRatio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/methods/parabolMethod/ParabolMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/methods/zero/ParabolMethod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/methods/svenn/Svenn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/methods/zero/Svenn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/methods/zero/GoldenRatio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/methods/zero/GoldenRatio.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path=".idea/" />
@@ -40,41 +37,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MatrixMath.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/methods/math/MatrixMath.java">
+      <file leaf-file-name="FormulaReader.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/formulareader/FormulaReader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1309">
-              <caret line="77" column="17" selection-start-line="77" selection-start-column="17" selection-end-line="77" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DFPMethod.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/methods/first/DFPMethod.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1853">
-              <caret line="120" column="30" selection-start-line="114" selection-start-column="7" selection-end-line="120" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Newton.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/methods/second/Newton.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="143" column="32" selection-start-line="143" selection-start-column="32" selection-end-line="143" selection-end-column="32" />
+            <state relative-caret-position="439">
+              <caret line="57" selection-start-line="57" selection-end-line="57" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#5432#5433#0" expanded="true" />
+                <element signature="e#5465#5466#0" expanded="true" />
+                <element signature="e#5515#5516#0" expanded="true" />
+                <element signature="e#5557#5558#0" expanded="true" />
+                <element signature="e#5609#5610#0" expanded="true" />
+                <element signature="e#5653#5654#0" expanded="true" />
+                <element signature="e#5689#5690#0" expanded="true" />
+                <element signature="e#5721#5722#0" expanded="true" />
+                <element signature="e#6111#6112#0" expanded="true" />
+                <element signature="e#6147#6148#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StartClass.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/methods/StartClass.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="46" column="35" selection-start-line="46" selection-start-column="35" selection-end-line="46" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -88,6 +67,7 @@
         <option value="Enum" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -137,7 +117,6 @@
         <option value="$PROJECT_DIR$/src/methods/dichotomyMethod/Svenn.java" />
         <option value="$PROJECT_DIR$/src/methods/Svenn.java" />
         <option value="$PROJECT_DIR$/src/methods/StartMethod.java" />
-        <option value="$PROJECT_DIR$/src/formulareader/ExampleUse.java" />
         <option value="$PROJECT_DIR$/src/methods/StartMethodsInterface.java" />
         <option value="$PROJECT_DIR$/src/methods/AbstractMethod.java" />
         <option value="$PROJECT_DIR$/src/methods/svenn/Svenn.java" />
@@ -145,13 +124,9 @@
         <option value="$PROJECT_DIR$/src/Class1.java" />
         <option value="$PROJECT_DIR$/src/methods/gradientSpusk/GradientSpusk.java" />
         <option value="$PROJECT_DIR$/src/methods/SimpleStart.java" />
-        <option value="$PROJECT_DIR$/src/formulareader/FormulaInterface.java" />
         <option value="$PROJECT_DIR$/src/formulareader/FormulaReaderWithTwoArguments.java" />
-        <option value="$PROJECT_DIR$/src/methods/MethodsInterface.java" />
         <option value="$PROJECT_DIR$/src/methods/goldenRatioMethod/GoldenRatio.java" />
         <option value="$PROJECT_DIR$/src/methods/dichotomyMethod/DichotomyMethod.java" />
-        <option value="$PROJECT_DIR$/src/formulareader/FormulaReader.java" />
-        <option value="$PROJECT_DIR$/src/methods/SimpleStarting.java" />
         <option value="$PROJECT_DIR$/src/methods/parabolMethod/ParabolMethod.java" />
         <option value="$PROJECT_DIR$/src/methods/firstPor/gradientSpusk/GradientSpusk.java" />
         <option value="$PROJECT_DIR$/src/methods/firstPor/conjugatedDirections/ConjugatedDirections.java" />
@@ -159,13 +134,20 @@
         <option value="$PROJECT_DIR$/src/methods/firstPor/gradientSpusk/conjugatedDirections/ConjugatedDirections.java" />
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
         <option value="$PROJECT_DIR$/src/methods/firstPor/gradientSpusk/dfp/DFPMethod.java" />
-        <option value="$PROJECT_DIR$/src/methods/zero/GoldenRatio.java" />
-        <option value="$PROJECT_DIR$/src/methods/first/DFPMethod.java" />
-        <option value="$PROJECT_DIR$/src/methods/first/GradientSpusk.java" />
         <option value="$PROJECT_DIR$/src/methods/zero/ConjugatedDirections.java" />
         <option value="$PROJECT_DIR$/src/methods/math/MatrixMath.java" />
-        <option value="$PROJECT_DIR$/src/methods/StartClass.java" />
         <option value="$PROJECT_DIR$/src/methods/second/Newton.java" />
+        <option value="$PROJECT_DIR$/src/methods/StartClassTest.java" />
+        <option value="$PROJECT_DIR$/src/methods/first/GradientSpusk.java" />
+        <option value="$PROJECT_DIR$/src/methods/zero/GoldenRatio.java" />
+        <option value="$PROJECT_DIR$/src/methods/first/DFPMethod.java" />
+        <option value="$PROJECT_DIR$/src/methods/StartClass.java" />
+        <option value="$PROJECT_DIR$/src/methods/zero/PairedGuides.java" />
+        <option value="$PROJECT_DIR$/src/methods/MethodsInterface.java" />
+        <option value="$PROJECT_DIR$/src/methods/SimpleStarting.java" />
+        <option value="$PROJECT_DIR$/src/formulareader/FormulaInterface.java" />
+        <option value="$PROJECT_DIR$/src/formulareader/ExampleUse.java" />
+        <option value="$PROJECT_DIR$/src/formulareader/FormulaReader.java" />
       </list>
     </option>
   </component>
@@ -209,6 +191,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -254,22 +238,44 @@
               <item name="methods" type="462c0819:PsiDirectoryNode" />
               <item name="second" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="optimizationMethodsPMK" type="b2602c69:ProjectViewProjectNode" />
+              <item name="optimizationMethodsPMK" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="methods" type="462c0819:PsiDirectoryNode" />
+              <item name="zero" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
       <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="junit.framework.TestCase" />
+    <property name="create.test.in.the.same.root" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/.idea" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Ignored.Files" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="methods" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="junit.framework.TestCase" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Workst\GIT\optimizationMethodsPMK\src\methods\zero" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -413,6 +419,9 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="StructureViewFactory">
+    <option name="ACTIVE_ACTIONS" value=",SHOW_INTERFACES" />
+  </component>
   <component name="SvnConfiguration">
     <configuration>C:\Users\ноухау\AppData\Roaming\Subversion</configuration>
   </component>
@@ -473,12 +482,18 @@
       <option name="project" value="LOCAL" />
       <updated>1527090674769</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Рефакторинг. Добавлен Ньютон">
+      <created>1527233751564</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1527233751564</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="0" />
       <window_info anchor="bottom" id="TODO" order="1" />
@@ -487,26 +502,26 @@
       <window_info anchor="right" id="Capture Analysis" order="2" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" weight="0.3280507" />
       <window_info anchor="right" id="Maven Projects" order="3" weight="0.32980332" />
-      <window_info anchor="bottom" id="Version Control" order="5" weight="0.32730263" />
-      <window_info anchor="bottom" id="Run" order="4" weight="0.44884488" />
+      <window_info anchor="bottom" id="Run" order="4" weight="0.27124184" />
+      <window_info anchor="bottom" id="Version Control" order="5" weight="0.32673267" />
       <window_info anchor="bottom" id="Terminal" order="6" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="1" />
-      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.2753404" />
-      <window_info id="Structure" order="3" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.49834985" visible="true" weight="0.24886535" />
+      <window_info id="Structure" order="3" sideWeight="0.50165015" side_tool="true" visible="true" weight="0.24886535" />
       <window_info anchor="right" id="Ant Build" order="9" weight="0.32980332" />
       <window_info id="UI Designer" order="4" />
       <window_info anchor="right" id="Theme Preview" order="6" />
-      <window_info id="Favorites" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="8" weight="0.6666667" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="3" weight="0.32843137" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="4" weight="0.25" />
       <window_info anchor="right" id="Coverage" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Cvs" order="7" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="right" id="Commander" order="1" weight="0.4" />
-      <window_info anchor="bottom" id="Find" order="3" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
       <window_info anchor="right" id="PlantUML" order="5" />
+      <window_info anchor="right" id="Commander" order="1" weight="0.4" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32894737" />
     </layout>
   </component>
@@ -549,7 +564,8 @@
     <MESSAGE value="Правки метода золотого сечения" />
     <MESSAGE value="Правки чтения формулы&#10;Добавлено расширение FormulaReader для чтения формулы с двумя аргументами&#10;Добавлен метод сопряженных направлений" />
     <MESSAGE value="Реализовано частично универсальное ДФП" />
-    <option name="LAST_COMMIT_MESSAGE" value="Реализовано частично универсальное ДФП" />
+    <MESSAGE value="Рефакторинг. Добавлен Ньютон" />
+    <option name="LAST_COMMIT_MESSAGE" value="Рефакторинг. Добавлен Ньютон" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -561,272 +577,64 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/formulareader/FormulaReaderWithTwoArguments.java">
+    <entry file="file://$PROJECT_DIR$/src/methods/math/MatrixMath.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="64" selection-start-line="4" selection-start-column="64" selection-end-line="4" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/methods/MethodsInterface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/methods/StartClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="48" selection-start-line="48" selection-end-line="48" />
+        <state relative-caret-position="1309">
+          <caret line="77" column="17" selection-start-line="77" selection-start-column="17" selection-end-line="77" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/methods/first/DFPMethod.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5185">
-          <caret line="305" column="5" selection-start-line="305" selection-start-column="5" selection-end-line="305" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/methods/SimpleStarting.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/methods/zero/ConjugatedDirections.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2907">
-          <caret line="171" column="8" selection-start-line="171" selection-start-column="8" selection-end-line="171" selection-end-column="8" />
+        <state relative-caret-position="2125">
+          <caret line="136" selection-start-line="136" selection-end-line="136" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/methods/first/GradientSpusk.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1054">
-          <caret line="62" column="13" selection-start-line="62" selection-start-column="13" selection-end-line="62" selection-end-column="13" />
+        <state relative-caret-position="2346">
+          <caret line="153" column="55" selection-start-line="153" selection-start-column="55" selection-end-line="153" selection-end-column="55" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/formulareader/FormulaReaderWithTwoArguments.java">
+    <entry file="file://$PROJECT_DIR$/src/methods/zero/PairedGuides.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="64" selection-start-line="4" selection-start-column="64" selection-end-line="4" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/methods/MethodsInterface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/methods/StartClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="48" selection-start-line="48" selection-end-line="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/formulareader/FunctionToRPE.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2074">
-          <caret line="122" column="40" lean-forward="true" selection-start-line="122" selection-start-column="40" selection-end-line="122" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/formulareader/FormulaReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/formulareader/FunctionToRPE.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2091">
-          <caret line="123" selection-start-line="123" selection-end-line="123" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/formulareader/FunctionToRPE.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3213">
-          <caret line="189" column="37" selection-start-line="189" selection-start-column="37" selection-end-line="189" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/formulareader/FunctionToRPE.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2465">
-          <caret line="145" column="81" selection-start-line="145" selection-start-column="81" selection-end-line="145" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/formulareader/FormulaReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="21" selection-start-column="21" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/formulareader/FunctionToRPE.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1037">
-          <caret line="61" column="27" selection-start-line="61" selection-start-column="27" selection-end-line="61" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/formulareader/FormulaReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="21" lean-forward="true" selection-start-column="21" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/formulareader/FunctionToRPE.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1037">
-          <caret line="61" column="27" lean-forward="true" selection-start-line="61" selection-start-column="27" selection-end-line="61" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/formulareader/FunctionToRPE.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2533">
-          <caret line="149" column="74" selection-start-line="149" selection-start-column="74" selection-end-line="149" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/formulareader/FormulaReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="17" column="99" selection-start-line="17" selection-start-column="99" selection-end-line="17" selection-end-column="99" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/formulareader/FunctionToRPE.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="72" selection-start-line="15" selection-start-column="72" selection-end-line="15" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/formulareader/FunctionToRPE.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="35" column="27" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/formulareader/FunctionToRPE.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="35" column="27" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/MainForm.java" />
-    <entry file="file://$PROJECT_DIR$/src/view/Uravnenie.form" />
-    <entry file="file://$PROJECT_DIR$/src/view/form.fxml" />
-    <entry file="file://$PROJECT_DIR$/src/formulareader/Operators.java" />
-    <entry file="file://$PROJECT_DIR$/src/methods/dichotomyMethod/StartMethod.java" />
-    <entry file="file://$PROJECT_DIR$/src/methods/AbstractMethod.java" />
-    <entry file="file://$PROJECT_DIR$/src/methods/parabolicMethod/ParabolicMethod.java" />
-    <entry file="file://$PROJECT_DIR$/src/formulareader/ExampleUse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="30" column="20" selection-start-line="30" selection-start-column="20" selection-end-line="35" selection-end-column="83" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/out/production/MetodOptZolotoeSechenie/methods/dichotomyMethod/DichotomyMethod.class" />
-    <entry file="file://$PROJECT_DIR$/out/production/MetodOptZolotoeSechenie/methods/parabolMethod/ParabolMethod.class" />
-    <entry file="file://$PROJECT_DIR$/src/Class1.java" />
-    <entry file="file://$PROJECT_DIR$/src/methods/zero/Svenn.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="883">
-          <caret line="72" column="15" selection-start-line="72" selection-start-column="15" selection-end-line="72" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/formulareader/FormulaInterface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/formulareader/FunctionToRPE.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1632">
-          <caret line="37" column="29" selection-start-line="37" selection-start-column="29" selection-end-line="37" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/methods/zero/ParabolMethod.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="33" selection-start-line="33" selection-end-line="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/formulareader/FormulaReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2329">
-          <caret line="146" selection-start-line="146" selection-end-line="146" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/methods/zero/DichotomyMethod.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="53" column="49" selection-start-line="53" selection-start-column="49" selection-end-line="53" selection-end-column="49" />
+        <state relative-caret-position="1666">
+          <caret line="106" column="23" selection-start-line="106" selection-start-column="23" selection-end-line="106" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#5834#5835#0" expanded="true" />
+            <element signature="e#5858#5859#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/methods/zero/GoldenRatio.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="54" column="46" selection-start-line="54" selection-start-column="46" selection-end-line="54" selection-end-column="46" />
+        <state relative-caret-position="2091">
+          <caret line="136" column="21" selection-start-line="136" selection-start-column="21" selection-end-line="136" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/methods/zero/ConjugatedDirections.java">
+    <entry file="file://$PROJECT_DIR$/src/methods/second/Newton.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        <state relative-caret-position="1411">
+          <caret line="93" column="29" selection-start-line="93" selection-start-column="29" selection-end-line="93" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/methods/first/GradientSpusk.java">
+    <entry file="file://$PROJECT_DIR$/src/methods/StartClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="524">
-          <caret line="62" column="13" selection-start-line="62" selection-start-column="13" selection-end-line="62" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/methods/MethodsInterface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/formulareader/FormulaReaderWithTwoArguments.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="4" column="64" selection-start-line="4" selection-start-column="64" selection-end-line="4" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/methods/SimpleStarting.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        <state relative-caret-position="629">
+          <caret line="51" column="30" selection-start-line="51" selection-start-column="30" selection-end-line="51" selection-end-column="30" />
+          <folding>
+            <element signature="e#1724#1725#0" expanded="true" />
+            <element signature="e#1766#1767#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -839,24 +647,165 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/methods/first/DFPMethod.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1853">
-          <caret line="120" column="30" selection-start-line="114" selection-start-column="7" selection-end-line="120" selection-end-column="30" />
+        <state relative-caret-position="2312">
+          <caret line="136" selection-start-line="136" selection-end-line="136" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/methods/StartClass.java">
+    <entry file="file://$PROJECT_DIR$/src/methods/first/GradientSpusk.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="46" column="35" selection-start-line="46" selection-start-column="35" selection-end-line="46" selection-end-column="35" />
+        <state relative-caret-position="2601">
+          <caret line="153" column="55" selection-start-line="153" selection-start-column="55" selection-end-line="153" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/methods/zero/PairedGuides.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1802">
+          <caret line="106" column="23" selection-start-line="106" selection-start-column="23" selection-end-line="106" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#5834#5835#0" expanded="true" />
+            <element signature="e#5858#5859#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/methods/zero/GoldenRatio.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2312">
+          <caret line="136" column="21" selection-start-line="136" selection-start-column="21" selection-end-line="136" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/methods/second/Newton.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="143" column="32" selection-start-line="143" selection-start-column="32" selection-end-line="143" selection-end-column="32" />
+        <state relative-caret-position="1581">
+          <caret line="93" column="29" selection-start-line="93" selection-start-column="29" selection-end-line="93" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/methods/StartClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="867">
+          <caret line="51" column="30" selection-start-line="51" selection-start-column="30" selection-end-line="51" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/methods/math/MatrixMath.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1309">
+          <caret line="77" column="17" selection-start-line="77" selection-start-column="17" selection-end-line="77" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/methods/first/DFPMethod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2125">
+          <caret line="136" selection-start-line="136" selection-end-line="136" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/methods/second/Newton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1411">
+          <caret line="93" column="29" selection-start-line="93" selection-start-column="29" selection-end-line="93" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/methods/zero/Svenn.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="22" selection-start-line="21" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/methods/StartClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+          <folding>
+            <element signature="e#1724#1725#0" expanded="true" />
+            <element signature="e#1766#1767#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/methods/zero/GoldenRatio.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3">
+          <caret line="103" column="29" lean-forward="true" selection-start-line="103" selection-start-column="29" selection-end-line="103" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/methods/first/GradientSpusk.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="39" column="13" lean-forward="true" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/methods/zero/PairedGuides.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="14">
+          <caret line="205" lean-forward="true" selection-start-line="205" selection-end-line="205" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#5834#5835#0" expanded="true" />
+            <element signature="e#5858#5859#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/methods/MethodsInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="6" column="34" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/methods/SimpleStarting.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="47" lean-forward="true" selection-start-line="10" selection-start-column="47" selection-end-line="10" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/formulareader/FormulaInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="54" selection-start-line="3" selection-start-column="54" selection-end-line="3" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/formulareader/ExampleUse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="9" column="66" selection-start-line="9" selection-start-column="66" selection-end-line="9" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/formulareader/FormulaReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="439">
+          <caret line="57" selection-start-line="57" selection-end-line="57" />
+          <folding>
+            <element signature="e#5432#5433#0" expanded="true" />
+            <element signature="e#5465#5466#0" expanded="true" />
+            <element signature="e#5515#5516#0" expanded="true" />
+            <element signature="e#5557#5558#0" expanded="true" />
+            <element signature="e#5609#5610#0" expanded="true" />
+            <element signature="e#5653#5654#0" expanded="true" />
+            <element signature="e#5689#5690#0" expanded="true" />
+            <element signature="e#5721#5722#0" expanded="true" />
+            <element signature="e#6111#6112#0" expanded="true" />
+            <element signature="e#6147#6148#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -5,19 +5,34 @@ import formulareader.FormulaReader;
 import formulareader.FormulaReaderWithTwoArguments;
 import methods.first.DFPMethod;
 import methods.first.GradientSpusk;
+import methods.second.Newton;
 import methods.zero.DichotomyMethod;
 import methods.zero.GoldenRatio;
+import methods.zero.PairedGuides;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+/**
+ * Start Class.
+ * Служит для запуска любого из методов.
+ * У метода должен быть реализован интерфейс MethodInterface
+ */
 public class StartClass {
     private MethodsInterface method;
     private FormulaInterface formula;
     private BufferedReader reader;
     private double result;
 
+    /**
+     * Запускает один из методов
+     * Порядок выхова:
+     * 1) Ввод формулы в строковом виде
+     * 2) Запуск метода inputOptions()
+     * 3) Запуск метода startMethod()
+     * @param method
+     */
     public StartClass(MethodsInterface method) {
         this.method = method;
         String formulaStr;
@@ -41,6 +56,9 @@ public class StartClass {
         result = method.returnResult();
     }
 
+    /**
+     * Выводит результат работы метода на экран
+     */
     public void ShowResult(){
         System.out.println(result);
     }
