@@ -1,0 +1,4 @@
+$ cat .gitignore
+.idea
+out
+desktop.ini
