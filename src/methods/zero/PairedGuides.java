@@ -7,6 +7,7 @@ import static java.lang.Math.sqrt;
 import formulareader.FormulaReaderWithTwoArguments;
 import methods.MethodsInterface;
 import methods.SimpleStarting;
+import methods.math.MatrixMath;
 
 import static java.lang.Math.abs;
 
@@ -103,8 +104,8 @@ public class PairedGuides implements MethodsInterface {
         System.out.println(td[1]);
         t=0.0;
         String s = formula.getInputFunction();
-        s = s.replaceAll("x","(" + (tx[0] > 0? tx[0]:("(0" + tx[0] + ")")) + "+" + (td[0] >= 0? td[0]:("(0" + td[0] + ")")) + "*x)");
-        s = s.replaceAll("y","(" + (tx[1] > 0? tx[1]:("(0" + tx[1] + ")")) + "+" + (td[1] >= 0? td[1]:("(0" + td[1] + ")")) + "*x)");
+        s = s.replaceAll("x","(" + tx[0] + " + "  + td[0] + "*x)");
+        s = s.replaceAll("y","(" + tx[1]+ "+" + td[1] + "*x)");
         SimpleStarting simple=new GoldenRatio();
        
         System.out.println(s);
@@ -161,7 +162,7 @@ public class PairedGuides implements MethodsInterface {
 
     private void step4() {
         x1=y3.clone();
-        System.out.println("norna="+norm(x1,x));
+        System.out.println("norma="+norm(x1,x));
         System.out.println("");
         if(norm(x1,x)<e)
         {
@@ -173,12 +174,9 @@ public class PairedGuides implements MethodsInterface {
             ds=d.clone();
             ds[0][0]=y3[0]-y1[0];
             ds[1][0]=y3[1]-y1[1];
-            //ds[0][2]=y3[0]-y1[0];
-            //ds[1][2]=y3[1]-y1[1];
             det=ds[0][1]*ds[1][2]-ds[0][2]*ds[1][1];
-            if(det!=0.0)
+            if(det != 0.0)
             {
-                //d=ds.clone();
                 y0=x1.clone();
                 k++;
                 i=0;
@@ -200,7 +198,12 @@ public class PairedGuides implements MethodsInterface {
     }
     
     private double norm(double []a, double []b) {
-        return (sqrt(Math.pow((a[0]-b[0]), 2)+Math.pow((a[1]-b[1]), 2)));
+        double[][] re = new double[2][2];
+        re[0][0] = a[0];
+        re[0][1] = a[1];
+        re[1][0] = b[0];
+        re[1][1] = b[1];
+        return MatrixMath.norma(re);
     }
 
 
@@ -214,7 +217,8 @@ public class PairedGuides implements MethodsInterface {
     @Override
     public void startMethod() {
         double[] xStart = {4, 0};
-        y0 = xStart;
+        x = xStart.clone();
+        y0 = xStart.clone();
         e = 0.001;
         calculating();
     }

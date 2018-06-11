@@ -9,6 +9,7 @@ import methods.second.Newton;
 import methods.zero.DichotomyMethod;
 import methods.zero.GoldenRatio;
 import methods.zero.PairedGuides;
+import methods.zero.ParabolMethod;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -65,7 +66,7 @@ public class StartClass {
 
     public static void main(String[] args) {
         double[] arr = {-1,1};
-        new StartClass(new GradientSpusk());
+        new StartClass(new PairedGuides());
         //2*x^2+y^2-2*x*y+2*x+6
     }
 }

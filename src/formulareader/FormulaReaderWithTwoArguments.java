@@ -10,7 +10,7 @@ public class FormulaReaderWithTwoArguments extends FormulaReader implements Form
 
     public double calculateFormula(double x, double y) {
         String oldFormulaRPE = getFormulaRPE();
-        setFormulaRPE(getFormulaRPE().replace("y", y + ""));
+        setFormulaRPE(getFormulaRPE().replaceAll("y", y + ""));
         setVariables("xX");
         double res = calculateFormula(x);
         setVariables("xy");

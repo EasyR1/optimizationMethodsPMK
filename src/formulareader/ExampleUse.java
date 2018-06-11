@@ -17,7 +17,7 @@ public class ExampleUse {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         System.out.print("Function: ");
-        FormulaReader formulaReader = new FormulaReader(sc.next());
+        FormulaReaderWithThreeArguments formulaReader = new FormulaReaderWithThreeArguments(sc.next());
 
         //Вывод обратной польской записи (не обязательно)
         //System.out.print(formulaReader.getFormulaRPE() + "\n");
@@ -28,8 +28,12 @@ public class ExampleUse {
                 case 1:
                     System.out.print("x = ");
                     double x = Double.parseDouble(reader.readLine());
+                    System.out.print("y = ");
+                    double y = Double.parseDouble(reader.readLine());
+                    System.out.print("z = ");
+                    double z = Double.parseDouble(reader.readLine());
                     //Вывод результата
-                    System.out.println(formulaReader.calculateFormula(x));
+                    System.out.println(formulaReader.calculateFormula(x,y,z));
                     break;
                 case 2:
                     System.out.print("x1 = ");

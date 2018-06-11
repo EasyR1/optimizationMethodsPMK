@@ -174,8 +174,8 @@ public class GoldenRatio implements MethodsInterface, SimpleStarting {
     public double simpleStart(String formula) {
         this.formula = new FormulaReader(formula);
         l = 0.000001;
-        ak = -2;
-        bk = 3;
+        ak = -100;
+        bk = 100;
         calcMethod();
         return result;
     }
